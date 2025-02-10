@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 
-import { Card } from "./Card";
+import { RepoCard } from "./RepoCard";
 import { useInfiniteScroll } from "../hooks";
-import { Container, Spinner, Message, InputField } from "./ui";
+import { Container, Spinner, Message, InputField, GridContainer } from "./ui";
 import { getErrorMessage } from "../utils";
 
 export const Repos = () => {
@@ -43,9 +43,9 @@ export const Repos = () => {
         )}
         {isError && error && <Message text={getErrorMessage(error)} />}
         {repos && repos.length !== 0 && (
-          <div className="grid grid-cols-3 justify-between my-5">
+          <GridContainer className="my-5">
             {repos?.map((repo) => (
-              <Card
+              <RepoCard
                 key={repo.id}
                 name={repo.name}
                 description={repo.description}
@@ -55,28 +55,13 @@ export const Repos = () => {
                 author={repo.owner.login}
               />
             ))}
-          </div>
+          </GridContainer>
         )}
         {(isFetching || isLoading) && (
           <div className="grid place-items-center fixed inset-0 z-10">
             <Spinner />
           </div>
         )}
-        <div className="grid grid-cols-1 gap-5 justify-between my-5">
-          {[...new Array(20)].map((_, i) => (
-            <Card
-              key={i}
-              name={"nnnnhnhnhnh"}
-              description={
-                "ggggggggggggf fffff fffff fffffffffffffffff fffffff"
-              }
-              repositoryLink={"..........."}
-              stars={4}
-              lastUpdate={new Date("2011-01-26T19:14:43Z")}
-              author={"repo.owner.login"}
-            />
-          ))}
-        </div>
       </Container>
     </div>
   );

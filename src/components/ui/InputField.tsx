@@ -25,7 +25,7 @@ export const InputField = forwardRef(
       <div className={className}>
         <input
           {...props}
-          className="rounded-md outline-teal-400 max-w-96 bg-gray-100 h-8 p-4"
+          className="rounded-md outline-teal-400  md:w-96 max-w-96 bg-gray-100 h-[38px] p-4"
           placeholder={placeholder}
           ref={ref}
           value={value}

@@ -1,0 +1,26 @@
+networks:
+  mynetwork:
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: server
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+    networks:
+      - mynetwork
+  frontend:
+    image: frontend
+    build:
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    env_file: ./.env
+    environment:
+      - URL=$URL
+      - TOKEN=$TOKEN

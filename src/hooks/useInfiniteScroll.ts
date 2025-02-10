@@ -12,12 +12,12 @@ export const useInfiniteScroll = () => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     setPage(1);
-    getData({ userName: searchString, page: 1, per_page: 10 });
+    getData({ userName: searchString, page: 1, per_page: 20 });
   };
 
   useEffect(() => {
     if (data?.repos.length && !data.end) {
-      getData({ userName: searchString, page, per_page: 10 });
+      getData({ userName: searchString, page, per_page: 20 });
     }
   }, [page]);
 
