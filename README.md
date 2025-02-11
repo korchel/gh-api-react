@@ -10,6 +10,7 @@
 
 ### How to build and run:
 
+- add .env file with your gh access token and gh url (see .env.example)
 - make run
 - go to localhost
 
