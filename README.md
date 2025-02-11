@@ -1,4 +1,4 @@
-## Stack
+### Stack
 
 - React
 - RTK Query
@@ -6,7 +6,13 @@
 - TailwindCSS
 - Webpack
 
-How to build and run:
+---
+
+### How to build and run:
 
 - make run
-- http://localhost
+- go to localhost
+
+---
+
+### Deployed on Vercel: https://gh-api-react.vercel.app
