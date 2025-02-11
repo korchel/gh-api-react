@@ -5,3 +5,8 @@
 - Typescript
 - TailwindCSS
 - Webpack
+
+How to build and run:
+
+- make run
+- http://localhost
